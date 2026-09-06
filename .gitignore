@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Temporary / Scratch files
+tmp/
+*.tmp
+.DS_Store
+Thumbs.db
+
+# SwarmForge worktrees (if generated)
+.worktrees/
