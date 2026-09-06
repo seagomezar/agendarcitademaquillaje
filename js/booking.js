@@ -2,6 +2,7 @@
  * Core Booking Domain Logic - Vane Pérez Makeup Artist (Medellín)
  * Pure business logic decoupled from DOM / UI delivery
  * Clean Architecture & SwarmForge CRAP <= 10 compliant
+ * Hardened by SwarmForge hardender role
  */
 
 const DEFAULT_COUNTRY_CODE = '57';
@@ -14,6 +15,19 @@ const AVAILABLE_SERVICES = Object.freeze([
   { id: 'editorial', name: 'Editorial & Sesiones de Fotos', priceEstimate: 'Cotización personalizada' },
   { id: 'classes', name: 'Clase VIP de Automaquillaje', priceEstimate: 'Desde $250.000 COP' }
 ]);
+
+/**
+ * Strips HTML tags and dangerous characters to ensure clean text output.
+ * @param {string} str
+ * @returns {string} Clean string
+ */
+function sanitizeInputText(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/<[^>]*>/g, '') // Strip HTML tags
+    .replace(/[\u0000-\u001F\u007F-\u009F]/g, '') // Strip control characters
+    .trim();
+}
 
 /**
  * Sanitizes phone number to standard WhatsApp international format.
@@ -36,6 +50,24 @@ function sanitizePhoneNumber(rawPhone) {
 }
 
 /**
+ * Checks if a YYYY-MM-DD date string represents today or a future date.
+ * @param {string} dateStr
+ * @returns {boolean}
+ */
+function isDatePresentOrFuture(dateStr) {
+  if (!dateStr || !/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    return false;
+  }
+  const targetDate = new Date(dateStr + 'T00:00:00');
+  if (isNaN(targetDate.getTime())) {
+    return false;
+  }
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return targetDate.getTime() >= today.getTime();
+}
+
+/**
  * Validates booking details provided by the user.
  * @param {Object} details
  * @returns {{isValid: boolean, errors: string[]}}
@@ -46,9 +78,9 @@ function validateBookingDetails(details) {
     return { isValid: false, errors: ['Detalles de reserva requeridos'] };
   }
 
-  const name = typeof details.clientName === 'string' ? details.clientName.trim() : '';
-  const service = typeof details.serviceName === 'string' ? details.serviceName.trim() : '';
-  const date = typeof details.bookingDate === 'string' ? details.bookingDate.trim() : '';
+  const name = sanitizeInputText(details.clientName);
+  const service = sanitizeInputText(details.serviceName);
+  const date = sanitizeInputText(details.bookingDate);
 
   if (name.length < 2) {
     errors.push('Por favor ingresa tu nombre completo');
@@ -58,6 +90,8 @@ function validateBookingDetails(details) {
   }
   if (!date) {
     errors.push('Por favor selecciona la fecha deseada');
+  } else if (!isDatePresentOrFuture(date)) {
+    errors.push('La fecha de la cita no puede ser en el pasado');
   }
 
   return {
@@ -74,11 +108,11 @@ function validateBookingDetails(details) {
 function buildWhatsAppBookingUrl(options) {
   const opts = options || {};
   const phone = sanitizePhoneNumber(opts.phone || DEFAULT_PHONE_NUMBER);
-  const name = (opts.clientName || '').trim() || 'Cliente';
-  const service = (opts.serviceName || 'Maquillaje Profesional').trim();
-  const date = (opts.bookingDate || 'Por coordinar').trim();
-  const venue = (opts.venueType || 'Estudio Privado (Medellín)').trim();
-  const notes = (opts.notes || '').trim();
+  const name = sanitizeInputText(opts.clientName) || 'Cliente';
+  const service = sanitizeInputText(opts.serviceName) || 'Maquillaje Profesional';
+  const date = sanitizeInputText(opts.bookingDate) || 'Por coordinar';
+  const venue = sanitizeInputText(opts.venueType) || 'Estudio Privado (Medellín)';
+  const notes = sanitizeInputText(opts.notes);
 
   let message = `¡Hola Vane! ✨ Mi nombre es *${name}* y me encantaría agendar una cita de maquillaje contigo en Medellín.\n\n`;
   message += `💄 *Servicio de interés:* ${service}\n`;
@@ -99,7 +133,9 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     DEFAULT_PHONE_NUMBER,
     AVAILABLE_SERVICES,
+    sanitizeInputText,
     sanitizePhoneNumber,
+    isDatePresentOrFuture,
     validateBookingDetails,
     buildWhatsAppBookingUrl
   };
@@ -108,7 +144,9 @@ if (typeof window !== 'undefined') {
   window.BookingLogic = {
     DEFAULT_PHONE_NUMBER,
     AVAILABLE_SERVICES,
+    sanitizeInputText,
     sanitizePhoneNumber,
+    isDatePresentOrFuture,
     validateBookingDetails,
     buildWhatsAppBookingUrl
   };
