@@ -1,31 +1,42 @@
 /**
- * Core Booking Domain Logic - Vane Pérez Makeup Artist
+ * Core Booking Domain Logic - Vane Pérez Makeup Artist (Medellín)
  * Pure business logic decoupled from DOM / UI delivery
  * Clean Architecture & SwarmForge CRAP <= 10 compliant
  */
 
+const DEFAULT_COUNTRY_CODE = '57';
+const DEFAULT_PHONE_NUMBER = '573002345678';
+
+const AVAILABLE_SERVICES = Object.freeze([
+  { id: 'bridal', name: 'Novias / Bridal Glam Luxury', priceEstimate: 'Desde $350.000 COP' },
+  { id: 'social', name: 'Maquillaje Social & Eventos', priceEstimate: 'Desde $160.000 COP' },
+  { id: 'quince', name: 'Quinceañeras & Sweet 15', priceEstimate: 'Desde $220.000 COP' },
+  { id: 'editorial', name: 'Editorial & Sesiones de Fotos', priceEstimate: 'Cotización personalizada' },
+  { id: 'classes', name: 'Clase VIP de Automaquillaje', priceEstimate: 'Desde $250.000 COP' }
+]);
+
 /**
  * Sanitizes phone number to standard WhatsApp international format.
- * Default prefix is 57 (Colombia).
+ * Defaults to Colombia prefix (57).
  * @param {string} rawPhone
  * @returns {string} Clean numeric phone string
  */
 function sanitizePhoneNumber(rawPhone) {
   if (!rawPhone || typeof rawPhone !== 'string') {
-    return '573001234567'; // Fallback default
+    return DEFAULT_PHONE_NUMBER;
   }
   const digits = rawPhone.replace(/\D/g, '');
-  if (digits.startsWith('57')) {
+  if (digits.startsWith(DEFAULT_COUNTRY_CODE)) {
     return digits;
   }
   if (digits.length === 10) {
-    return '57' + digits;
+    return DEFAULT_COUNTRY_CODE + digits;
   }
-  return digits || '573001234567';
+  return digits || DEFAULT_PHONE_NUMBER;
 }
 
 /**
- * Validates booking options.
+ * Validates booking details provided by the user.
  * @param {Object} details
  * @returns {{isValid: boolean, errors: string[]}}
  */
@@ -35,13 +46,17 @@ function validateBookingDetails(details) {
     return { isValid: false, errors: ['Detalles de reserva requeridos'] };
   }
 
-  if (!details.clientName || details.clientName.trim().length < 2) {
-    errors.push('Por favor ingresa tu nombre');
+  const name = typeof details.clientName === 'string' ? details.clientName.trim() : '';
+  const service = typeof details.serviceName === 'string' ? details.serviceName.trim() : '';
+  const date = typeof details.bookingDate === 'string' ? details.bookingDate.trim() : '';
+
+  if (name.length < 2) {
+    errors.push('Por favor ingresa tu nombre completo');
   }
-  if (!details.serviceName || details.serviceName.trim().length === 0) {
+  if (!service) {
     errors.push('Por favor selecciona un servicio de maquillaje');
   }
-  if (!details.bookingDate || details.bookingDate.trim().length === 0) {
+  if (!date) {
     errors.push('Por favor selecciona la fecha deseada');
   }
 
@@ -52,13 +67,13 @@ function validateBookingDetails(details) {
 }
 
 /**
- * Builds the WhatsApp appointment booking URL with formatted text.
+ * Formats appointment request text and creates the direct WhatsApp URL.
  * @param {Object} options
- * @returns {string} WhatsApp direct URL
+ * @returns {string} WhatsApp direct link
  */
 function buildWhatsAppBookingUrl(options) {
   const opts = options || {};
-  const phone = sanitizePhoneNumber(opts.phone || '573001234567');
+  const phone = sanitizePhoneNumber(opts.phone || DEFAULT_PHONE_NUMBER);
   const name = (opts.clientName || '').trim() || 'Cliente';
   const service = (opts.serviceName || 'Maquillaje Profesional').trim();
   const date = (opts.bookingDate || 'Por coordinar').trim();
@@ -82,6 +97,8 @@ function buildWhatsAppBookingUrl(options) {
 // Module export for Node.js test runners & Browser global attachment
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
+    DEFAULT_PHONE_NUMBER,
+    AVAILABLE_SERVICES,
     sanitizePhoneNumber,
     validateBookingDetails,
     buildWhatsAppBookingUrl
@@ -89,6 +106,8 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 if (typeof window !== 'undefined') {
   window.BookingLogic = {
+    DEFAULT_PHONE_NUMBER,
+    AVAILABLE_SERVICES,
     sanitizePhoneNumber,
     validateBookingDetails,
     buildWhatsAppBookingUrl
