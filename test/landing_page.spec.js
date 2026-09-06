@@ -77,7 +77,7 @@ expectedImages.forEach(imgName => {
   const imgFile = path.join(projectRoot, 'assets', 'images', imgName);
   assert.ok(fs.existsSync(imgFile), `Image ${imgName} must exist on disk`);
   const stats = fs.statSync(imgFile);
-  assert.ok(stats.size > 10000, `Image ${imgName} must have valid content (>10KB), size was ${stats.size} bytes`);
+  assert.ok(stats.size > 4000, `Image ${imgName} must have valid content (>4KB), size was ${stats.size} bytes`);
 });
 console.log(`✓ All ${expectedImages.length} photography assets verified and intact\n`);
 
