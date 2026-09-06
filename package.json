@@ -1,0 +1,22 @@
+{
+  "name": "agendarcitademaquillaje",
+  "version": "1.0.0",
+  "description": "Landing page para agendar cita de maquillaje con Vane Perez Makeup Artist en Medellin por WhatsApp",
+  "main": "js/booking.js",
+  "scripts": {
+    "test": "node test/core_booking.spec.js && node test/property_invariants.spec.js && node test/mutation_hardening.spec.js && node test/landing_page.spec.js",
+    "test:unit": "node test/core_booking.spec.js",
+    "test:invariants": "node test/property_invariants.spec.js",
+    "test:hardening": "node test/mutation_hardening.spec.js",
+    "test:qa": "node test/landing_page.spec.js"
+  },
+  "keywords": [
+    "makeup",
+    "medellin",
+    "whatsapp",
+    "swarm-forge",
+    "unclebob"
+  ],
+  "author": "Sebastian Gomez",
+  "license": "MIT"
+}
