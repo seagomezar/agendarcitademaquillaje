@@ -56,7 +56,7 @@ console.log('--- Running Coder Unit Tests (TDD) ---');
     notes: 'Maquillaje para una boda de noche en Medellín'
   });
 
-  assert.ok(url.startsWith('https://wa.me/573148492143?text='), 'URL should use wa.me schema with new phone');
+  assert.ok(url.startsWith('https://api.whatsapp.com/send?phone=573148492143&text='), 'URL should use api.whatsapp.com schema with new phone');
   assert.ok(url.includes('Valentina%20Soto') || url.includes('Valentina+Soto'), 'URL must encode client name');
   assert.ok(url.includes('Maquillaje'), 'URL must include selected service');
   assert.ok(url.includes('2026-11-20'), 'URL must include appointment date');
@@ -68,7 +68,7 @@ console.log('--- Running Coder Unit Tests (TDD) ---');
   assert.strictEqual(AVAILABLE_PRODUCTS.length, 10, 'Must have exactly 10 placeholder products');
 
   const prodUrl = buildWhatsAppProductUrl('Fijador de Maquillaje Blindado (120ml)', '$65.000 COP');
-  assert.ok(prodUrl.startsWith('https://wa.me/573148492143?text='), 'Product URL must target 573148492143');
+  assert.ok(prodUrl.startsWith('https://api.whatsapp.com/send?phone=573148492143&text='), 'Product URL must target 573148492143 on api.whatsapp.com');
   assert.ok(prodUrl.includes('Quiero%20este%20producto'), 'Product URL must include "Quiero este producto" message');
   assert.ok(prodUrl.includes('Fijador'), 'Product URL must include product name');
   assert.ok(prodUrl.includes('65.000'), 'Product URL must include product price');

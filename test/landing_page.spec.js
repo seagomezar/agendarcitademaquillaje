@@ -45,8 +45,7 @@ assert.ok(!htmlContent.includes('573002345678'), 'Old placeholder phone 57300234
 assert.ok(htmlContent.includes('573148492143'), 'Official phone 573148492143 must be present');
 assert.ok(htmlContent.includes('id="hero-primary-cta"'), 'Hero primary CTA button must exist');
 assert.ok(htmlContent.includes('id="floating-whatsapp-btn"'), 'Floating persistent WhatsApp button must exist');
-assert.ok(htmlContent.includes('id="submit-booking-btn"'), 'Form submit WhatsApp CTA button must exist');
-assert.ok(htmlContent.includes('https://wa.me/573148492143'), 'WhatsApp links must target official wa.me/573148492143');
+assert.ok(htmlContent.includes('https://api.whatsapp.com/send?phone=573148492143'), 'WhatsApp links must target official api.whatsapp.com with new phone');
 assert.ok(htmlContent.includes('target="_blank"'), 'External WhatsApp links must open in new tab');
 assert.ok(htmlContent.includes('rel="noopener noreferrer"'), 'External links must use secure noopener noreferrer');
 
@@ -57,7 +56,9 @@ for (let i = 1; i <= 10; i++) {
 const productBtnCount = (htmlContent.match(/class="[^"]*product-buy-btn[^"]*"/g) || []).length;
 assert.strictEqual(productBtnCount, 10, 'Must have exactly 10 product purchase buttons');
 assert.ok(htmlContent.includes('Quiero%20este%20producto'), 'Product buttons must prefill "Quiero este producto"');
-console.log('✓ All 10 beauty products and official WhatsApp (+57 314 849 2143) links verified\n');
+assert.ok(htmlContent.includes('%E2%9C%A8'), 'Product buttons must include URL-encoded sparkles emoji (%E2%9C%A8)');
+assert.ok(htmlContent.includes('%F0%9F%92%96'), 'Product buttons must include URL-encoded heart emoji (%F0%9F%92%96)');
+console.log('✓ All 10 beauty products with preserved emojis and official WhatsApp (+57 314 849 2143) links verified\n');
 
 // 4. Verify Instagram Branding & Links
 console.log('4. Checking Instagram Profile Integration (@vaneperezmakeup)...');

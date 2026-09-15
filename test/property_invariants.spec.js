@@ -33,7 +33,7 @@ const testCombinations = [
 
 testCombinations.forEach((opts, idx) => {
   const url = buildWhatsAppBookingUrl(opts);
-  assert.ok(url.startsWith('https://wa.me/'), `Combo ${idx} must start with https://wa.me/`);
+  assert.ok(url.startsWith('https://api.whatsapp.com/send?phone='), `Combo ${idx} must start with api.whatsapp.com`);
   assert.ok(!url.includes(' '), `Combo ${idx} must not contain raw whitespace: ${url}`);
   assert.doesNotThrow(() => decodeURIComponent(url), `Combo ${idx} should be valid percent-encoded URI`);
 });
@@ -55,7 +55,7 @@ const productCases = [
 
 productCases.forEach(([name, price], idx) => {
   const url = buildWhatsAppProductUrl(name, price);
-  assert.ok(url.startsWith('https://wa.me/573148492143?text='), `Product case ${idx} must target official phone`);
+  assert.ok(url.startsWith('https://api.whatsapp.com/send?phone=573148492143&text='), `Product case ${idx} must target official phone on api.whatsapp.com`);
   assert.ok(url.includes('Quiero%20este%20producto'), `Product case ${idx} must include "Quiero este producto"`);
   assert.ok(!url.includes(' '), `Product case ${idx} must have no raw spaces`);
   assert.doesNotThrow(() => decodeURIComponent(url), `Product case ${idx} must decode cleanly`);

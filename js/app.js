@@ -79,7 +79,7 @@ function initBookingForm() {
     // Build the WhatsApp direct booking URL using domain logic
     const waUrl = window.BookingLogic ? 
       window.BookingLogic.buildWhatsAppBookingUrl(bookingData) : 
-      `https://wa.me/573148492143?text=${encodeURIComponent('Hola Vane, quisiera agendar una cita')}`;
+      `https://api.whatsapp.com/send?phone=573148492143&text=${encodeURIComponent('Hola Vane, quisiera agendar una cita')}`;
 
     // Open WhatsApp directly
     window.open(waUrl, '_blank', 'noopener,noreferrer');

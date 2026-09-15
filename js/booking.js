@@ -216,14 +216,14 @@ function buildWhatsAppBookingUrl(options) {
     message += `📝 *Detalles adicionales:* ${notes}\n`;
   }
 
-  message += `\n¿Tienes disponibilidad para esta fecha? ¡Quedo muy atenta, gracias! 💖`;
+  message += `\n¿Tienes disponibilidad para esta fecha? ¡Quedo muy atenta, muchas gracias! 💖`;
 
-  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
 }
 
 /**
  * Formats beauty product purchase request and creates the direct WhatsApp URL.
- * User requirement: "que para comprar algun product redirija whatssap con un mensaje quiero este producto"
+ * Uses api.whatsapp.com to preserve emojis (✨, 💖) without wa.me redirect corruption.
  * @param {string} productName
  * @param {string|number} [productPrice]
  * @param {string} [phone]
@@ -236,7 +236,7 @@ function buildWhatsAppProductUrl(productName, productPrice, phone = DEFAULT_PHON
 
   const message = `¡Hola Vane! ✨ Quiero este producto: *${cleanName}*${priceInfo}.\n\n¿Tienes disponibilidad para entrega o envío en Medellín? ¡Quedo atenta para coordinar el pago! 💖`;
 
-  return `https://wa.me/${targetPhone}?text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${targetPhone}&text=${encodeURIComponent(message)}`;
 }
 
 // Module export for Node.js test runners & Browser global attachment
