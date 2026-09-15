@@ -601,20 +601,6 @@ section {
   margin-bottom: 48px;
 }
 
-@media (max-width: 992px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-}
-
-@media (max-width: 600px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
 .product-card {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -762,6 +748,93 @@ section {
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.04em;
+}
+
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+
+  .product-card {
+    border-radius: 18px;
+  }
+
+  .product-body {
+    padding: 14px 12px;
+  }
+
+  .product-badge {
+    top: 8px;
+    right: 8px;
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+
+  .product-category {
+    font-size: 0.62rem;
+    margin-bottom: 3px;
+  }
+
+  .product-title {
+    font-size: 0.95rem;
+    line-height: 1.25;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.5em;
+  }
+
+  .product-desc {
+    display: none; /* Streamline mobile cards for high readability */
+  }
+
+  .product-flyer-pill {
+    padding: 4px 8px;
+    margin: 6px 0 10px 0;
+  }
+
+  .flyer-price-number {
+    font-size: 1.05rem;
+  }
+
+  .product-footer {
+    padding-top: 10px;
+    gap: 8px;
+  }
+
+  .product-price-row {
+    display: none !important; /* The flyer pill above already displays the clean price badge */
+  }
+
+  .product-buy-btn {
+    padding: 9px 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .product-desc {
+    display: block;
+    font-size: 0.82rem;
+  }
 }
 
 .products-guarantee-banner {
@@ -1396,7 +1469,49 @@ section {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Mobile menu can fold or focus on direct CTA */
+    display: none; /* Mobile navigation prioritizes the direct conversion CTA */
+  }
+
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .nav-container {
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    gap: 10px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand-logo-img {
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .logo-title {
+    font-size: 1.12rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .logo-subtitle {
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+  }
+
+  .header-actions {
+    flex-shrink: 0;
+  }
+
+  #header-whatsapp-cta {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   .hero-title {
@@ -1424,5 +1539,78 @@ section {
 
   .floating-tooltip {
     display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .announcement-inner {
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px 12px;
+    font-size: 0.74rem;
+    text-align: center;
+  }
+
+  .brand-logo-img {
+    height: 22px;
+  }
+
+  .logo-title {
+    font-size: 1.02rem;
+    letter-spacing: 0.04em;
+  }
+
+  .logo-subtitle {
+    display: none; /* Keep header compact and uncluttered on narrow mobile screens */
+  }
+
+  #header-whatsapp-cta {
+    padding: 7px 11px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+
+  #header-whatsapp-cta svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .boutique-logo-img {
+    height: 40px;
+  }
+
+  .products-section {
+    padding: 60px 0;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .badge-item {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    font-size: 0.72rem;
+    line-height: 1.6;
   }
 }

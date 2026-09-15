@@ -32,12 +32,19 @@ assert.ok(htmlContent.includes('<title>Vane Pérez | Makeup Artist Medellín'), 
 // Language
 assert.ok(htmlContent.includes('<html lang="es">'), 'HTML lang attribute must be Spanish (es)');
 
+// Favicon & Touch Icons
+assert.ok(htmlContent.includes('rel="icon" type="image/x-icon" href="favicon.ico"'), 'Favicon ICO must be linked in HTML');
+assert.ok(htmlContent.includes('rel="apple-touch-icon"'), 'Apple touch icon must be linked in HTML');
+assert.ok(fs.existsSync(path.join(projectRoot, 'favicon.ico')), 'favicon.ico must exist on disk');
+assert.ok(fs.existsSync(path.join(projectRoot, 'assets', 'images', 'favicon-32.png')), 'assets/images/favicon-32.png must exist');
+assert.ok(fs.existsSync(path.join(projectRoot, 'assets', 'images', 'apple-touch-icon.png')), 'assets/images/apple-touch-icon.png must exist');
+
 // Key Landmark Sections
 const requiredSectionIds = ['hero', 'services', 'products', 'booking-section', 'portfolio', 'about', 'testimonials', 'faq'];
 requiredSectionIds.forEach(id => {
   assert.ok(htmlContent.includes(`id="${id}"`), `Section #${id} must exist in HTML`);
 });
-console.log('✓ All 8 core sections (including #products) exist in DOM\n');
+console.log('✓ All 8 core sections and Favicon assets exist in DOM and disk\n');
 
 // 3. Verify WhatsApp CTAs & Official Phone Number (+57 314 849 2143)
 console.log('3. Validating Call-To-Action (CTA) WhatsApp Integrations & Official Number...');
@@ -110,8 +117,10 @@ assert.ok(cssContent.includes('--color-bg: #FFF8F5;'), 'Ivory background token m
 assert.ok(cssContent.includes('--color-gold: #C5A059;'), 'Gold metallic accent token must be defined');
 assert.ok(cssContent.includes('--color-espresso: #221A14;'), 'Espresso text token must be defined');
 assert.ok(cssContent.includes('Playfair Display'), 'Playfair Display font family must be configured');
-assert.ok(cssContent.includes('@media (max-width: 768px)'), 'Mobile responsive breakpoint must exist');
-console.log('✓ Stitch design tokens & responsive CSS verified\n');
+assert.ok(cssContent.includes('@media (max-width: 768px)'), 'Mobile responsive breakpoint 768px must exist');
+assert.ok(cssContent.includes('@media (max-width: 680px)'), 'Mobile responsive breakpoint 680px for product grid must exist');
+assert.ok(cssContent.includes('@media (max-width: 520px)'), 'Mobile responsive breakpoint 520px for header and layout must exist');
+console.log('✓ Stitch design tokens & mobile responsive CSS verified\n');
 
 console.log('====================================================');
 console.log('🎉 QA VERIFICATION COMPLETE: ALL 6 AUDITS PASSED!');
