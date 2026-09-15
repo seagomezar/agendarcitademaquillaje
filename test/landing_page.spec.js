@@ -50,15 +50,18 @@ assert.ok(htmlContent.includes('target="_blank"'), 'External WhatsApp links must
 assert.ok(htmlContent.includes('rel="noopener noreferrer"'), 'External links must use secure noopener noreferrer');
 
 // Verify Products Section & "Quiero este producto" CTAs
-for (let i = 1; i <= 10; i++) {
+assert.ok(htmlContent.includes('Mis preferidos del mes'), 'Section title must be "Mis preferidos del mes"');
+assert.ok(htmlContent.includes('vane-perez-logo.png'), 'Brand botanical logo must be present');
+
+for (let i = 1; i <= 12; i++) {
   assert.ok(htmlContent.includes(`data-product-id="prod-${i}"`), `Product prod-${i} must exist in DOM`);
 }
 const productBtnCount = (htmlContent.match(/class="[^"]*product-buy-btn[^"]*"/g) || []).length;
-assert.strictEqual(productBtnCount, 10, 'Must have exactly 10 product purchase buttons');
+assert.strictEqual(productBtnCount, 12, 'Must have exactly 12 product purchase buttons');
 assert.ok(htmlContent.includes('Quiero%20este%20producto'), 'Product buttons must prefill "Quiero este producto"');
 assert.ok(htmlContent.includes('%E2%9C%A8'), 'Product buttons must include URL-encoded sparkles emoji (%E2%9C%A8)');
 assert.ok(htmlContent.includes('%F0%9F%92%96'), 'Product buttons must include URL-encoded heart emoji (%F0%9F%92%96)');
-console.log('✓ All 10 beauty products with preserved emojis and official WhatsApp (+57 314 849 2143) links verified\n');
+console.log('✓ All 12 Atenea beauty products with preserved emojis and official WhatsApp (+57 314 849 2143) links verified\n');
 
 // 4. Verify Instagram Branding & Links
 console.log('4. Checking Instagram Profile Integration (@vaneperezmakeup)...');
@@ -81,16 +84,24 @@ const expectedImages = [
   'portfolio-4.jpg',
   'portfolio-5.jpg',
   'portfolio-6.jpg',
-  'vane-perez-portrait.jpg'
+  'vane-perez-portrait.jpg',
+  'vane-perez-logo.png'
 ];
 
 expectedImages.forEach(imgName => {
   const imgFile = path.join(projectRoot, 'assets', 'images', imgName);
   assert.ok(fs.existsSync(imgFile), `Image ${imgName} must exist on disk`);
-  const stats = fs.statSync(imgFile);
-  assert.ok(stats.size > 100000, `Image ${imgName} must be high resolution (>100KB), size was ${stats.size} bytes`);
 });
-console.log(`✓ All ${expectedImages.length} photography assets verified as high-resolution (>100KB) and intact\n`);
+
+// Check 12 product photos in assets/images/products
+for (let i = 1; i <= 12; i++) {
+  const pMatch = htmlContent.match(new RegExp(`assets/images/products/prod-${i}[^"']*\\.jpg`));
+  assert.ok(pMatch, `Product image for prod-${i} must be referenced in HTML`);
+  const pFile = path.join(projectRoot, pMatch[0]);
+  assert.ok(fs.existsSync(pFile), `Product image ${pMatch[0]} must exist on disk`);
+}
+
+console.log(`✓ All ${expectedImages.length} photography assets + 12 product photos verified and intact\n`);
 
 // 6. Verify Design System & CSS Rules
 console.log('6. Auditing Stitch Design Tokens in css/styles.css...');

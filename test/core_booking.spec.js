@@ -63,15 +63,15 @@ console.log('--- Running Coder Unit Tests (TDD) ---');
   console.log('✓ buildWhatsAppBookingUrl passed');
 }
 
-// Test 4: Product Purchase WhatsApp URL & Catalog placeholders
+// Test 4: Product Purchase WhatsApp URL & Catalog products
 {
-  assert.strictEqual(AVAILABLE_PRODUCTS.length, 10, 'Must have exactly 10 placeholder products');
+  assert.strictEqual(AVAILABLE_PRODUCTS.length, 12, 'Must have exactly 12 authentic Atenea products');
 
-  const prodUrl = buildWhatsAppProductUrl('Fijador de Maquillaje Blindado (120ml)', '$65.000 COP');
+  const prodUrl = buildWhatsAppProductUrl('Atenea 1st Scene Serum Tinted Foundation (30ml)', '$57.000 COP');
   assert.ok(prodUrl.startsWith('https://api.whatsapp.com/send?phone=573148492143&text='), 'Product URL must target 573148492143 on api.whatsapp.com');
   assert.ok(prodUrl.includes('Quiero%20este%20producto'), 'Product URL must include "Quiero este producto" message');
-  assert.ok(prodUrl.includes('Fijador'), 'Product URL must include product name');
-  assert.ok(prodUrl.includes('65.000'), 'Product URL must include product price');
+  assert.ok(prodUrl.includes('Serum') || prodUrl.includes('Atenea'), 'Product URL must include product name');
+  assert.ok(prodUrl.includes('57.000'), 'Product URL must include product price');
   console.log('✓ buildWhatsAppProductUrl and AVAILABLE_PRODUCTS passed');
 }
 

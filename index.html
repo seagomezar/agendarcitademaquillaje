@@ -34,8 +34,11 @@
   <header class="site-header" id="header">
     <div class="container nav-container">
       <a href="#hero" class="brand-logo" aria-label="Vane Pérez Inicio">
-        <span class="logo-title">VANE PÉREZ</span>
-        <span class="logo-subtitle">MAKEUP ARTIST · MEDELLÍN</span>
+        <img src="assets/images/vane-perez-logo.png" alt="Vane Pérez Logo" class="brand-logo-img">
+        <div class="brand-text-col">
+          <span class="logo-title">VANE PÉREZ</span>
+          <span class="logo-subtitle">MAKEUP ARTIST · MEDELLÍN</span>
+        </div>
       </a>
 
       <nav class="main-nav" aria-label="Navegación principal">
@@ -213,37 +216,35 @@
     <section class="products-section" id="products">
       <div class="container">
         <div class="section-header text-center">
-          <span class="eyebrow-tag">BOUTIQUE & CUIDADO PROFESIONAL</span>
-          <h2 class="section-title">Productos de Belleza Exclusivos</h2>
+          <div class="boutique-monogram">
+            <img src="assets/images/vane-perez-logo.png" alt="Vane Pérez Logo" class="boutique-logo-img">
+          </div>
+          <h2 class="section-title">Mis preferidos del mes</h2>
           <p class="section-subtitle">
-            Los mismos cosméticos premium y de fijación extrema que Vane Pérez utiliza en sus novias y producciones en Medellín. Selecciona tu favorito y adquiérelo directamente por WhatsApp.
+            Selección exclusiva de cosméticos profesionales Atenea que Vane Pérez recomienda y utiliza en novias y producciones en Medellín. Escoge tus favoritos y adquiérelos directamente por WhatsApp con entrega rápida.
           </p>
         </div>
 
         <div class="products-grid">
-          <!-- Product 1 -->
+          <!-- Product prod-1 -->
           <article class="product-card" data-product-id="prod-1">
             <div class="product-thumb">
-              <span class="product-badge">Bestseller</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="22" y="24" width="20" height="34" rx="4"/>
-                <path d="M28 24V16h8v8"/>
-                <path d="M32 10v6"/>
-                <path d="M24 10h16"/>
-                <path d="M42 34l8-4m-34 0l-8-4"/>
-                <circle cx="32" cy="40" r="4"/>
-              </svg>
+              <span class="product-badge">Serum Glow</span>
+              <img src="assets/images/products/prod-1-serum-foundation.jpg" alt="Atenea 1st Scene Serum Tinted Foundation (30ml)" class="product-img" loading="lazy">
             </div>
             <div class="product-body">
-              <span class="product-category">Fijación & Acabado</span>
-              <h3 class="product-title">Fijador de Maquillaje Blindado (120ml)</h3>
-              <p class="product-desc">Bruma microfina ultra resistente al agua, sudor y transferencias por más de 18 horas.</p>
+              <span class="product-category">Rostro / Piel</span>
+              <h3 class="product-title">Atenea 1st Scene Serum Tinted Foundation (30ml)</h3>
+              <p class="product-desc">Base en sérum con color que hidrata profundamente, unifica el tono y aporta luminosidad natural radiante.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">57.000</span>
+              </div>
               <div class="product-footer">
                 <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$65.000 COP</span>
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$57.000 COP</span>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AFijador%20de%20Maquillaje%20Blindado%20%28120ml%29%2A%20%28%2465.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-1" data-product-name="Fijador de Maquillaje Blindado (120ml)" data-product-price="$65.000 COP">
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%201st%20Scene%20Serum%20Tinted%20Foundation%20%2830ml%29%2A%20%28%2457.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-1" data-product-name="Atenea 1st Scene Serum Tinted Foundation (30ml)" data-product-price="$57.000 COP">
                   <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
                   </svg>
@@ -253,28 +254,25 @@
             </div>
           </article>
 
-          <!-- Product 2 -->
+          <!-- Product prod-2 -->
           <article class="product-card" data-product-id="prod-2">
             <div class="product-thumb">
-              <span class="product-badge">Favorito</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M26 22V14a6 6 0 0 1 12 0v8"/>
-                <rect x="20" y="22" width="24" height="34" rx="6"/>
-                <path d="M28 34h8"/>
-                <path d="M32 30v8"/>
-                <circle cx="32" cy="46" r="3"/>
-              </svg>
+              <span class="product-badge">Bestseller</span>
+              <img src="assets/images/products/prod-2-liquid-foundation.jpg" alt="Atenea 1st Scene Liquid Foundation (30ml)" class="product-img" loading="lazy">
             </div>
             <div class="product-body">
-              <span class="product-category">Preparación de Piel</span>
-              <h3 class="product-title">Sérum Facial Hidratante & Primer Glow (30ml)</h3>
-              <p class="product-desc">Con ácido hialurónico y niacinamida para alisar la textura y aportar luminosidad natural.</p>
+              <span class="product-category">Rostro / Piel</span>
+              <h3 class="product-title">Atenea 1st Scene Liquid Foundation (30ml)</h3>
+              <p class="product-desc">Base líquida de cobertura modulable con acabado satinado profesional de larga duración para todo tipo de piel.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">43.000</span>
+              </div>
               <div class="product-footer">
                 <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$85.000 COP</span>
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$43.000 COP</span>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AS%C3%A9rum%20Facial%20Hidratante%20%26%20Primer%20Glow%20%2830ml%29%2A%20%28%2485.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-2" data-product-name="Sérum Facial Hidratante & Primer Glow (30ml)" data-product-price="$85.000 COP">
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%201st%20Scene%20Liquid%20Foundation%20%2830ml%29%2A%20%28%2443.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-2" data-product-name="Atenea 1st Scene Liquid Foundation (30ml)" data-product-price="$43.000 COP">
                   <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
                   </svg>
@@ -284,29 +282,25 @@
             </div>
           </article>
 
-          <!-- Product 3 -->
+          <!-- Product prod-3 -->
           <article class="product-card" data-product-id="prod-3">
             <div class="product-thumb">
-              <span class="product-badge">Nuevo</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="12" y="16" width="40" height="32" rx="4"/>
-                <line x1="12" y1="28" x2="52" y2="28"/>
-                <circle cx="20" cy="38" r="3"/>
-                <circle cx="32" cy="38" r="3"/>
-                <circle cx="44" cy="38" r="3"/>
-                <path d="M22 22h20"/>
-              </svg>
+              <span class="product-badge">Alta Cobertura</span>
+              <img src="assets/images/products/prod-3-concealer.jpg" alt="Atenea 1st Scene Corrector & Concealer (10ml)" class="product-img" loading="lazy">
             </div>
             <div class="product-body">
-              <span class="product-category">Ojos</span>
-              <h3 class="product-title">Paleta de Sombras "Medellín Golden Hour"</h3>
-              <p class="product-desc">12 sombras ultra pigmentadas en acabados mate, satinado y metalizado de tonos cálidos.</p>
+              <span class="product-category">Rostro / Ojos</span>
+              <h3 class="product-title">Atenea 1st Scene Corrector & Concealer (10ml)</h3>
+              <p class="product-desc">Corrector líquido de alta cobertura enriquecido con cafeína y ácido hialurónico para ojeras e imperfecciones.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">37.000</span>
+              </div>
               <div class="product-footer">
                 <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$110.000 COP</span>
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$37.000 COP</span>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2APaleta%20de%20Sombras%20%22Medell%C3%ADn%20Golden%20Hour%22%2A%20%28%24110.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-3" data-product-name="Paleta de Sombras &quot;Medellín Golden Hour&quot;" data-product-price="$110.000 COP">
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%201st%20Scene%20Corrector%20%26%20Concealer%20%2810ml%29%2A%20%28%2437.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-3" data-product-name="Atenea 1st Scene Corrector & Concealer (10ml)" data-product-price="$37.000 COP">
                   <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
                   </svg>
@@ -316,26 +310,137 @@
             </div>
           </article>
 
-          <!-- Product 4 -->
+          <!-- Product prod-4 -->
           <article class="product-card" data-product-id="prod-4">
             <div class="product-thumb">
-              <span class="product-badge">Esencial</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M26 36v18h12V36"/>
-                <path d="M28 36V22c0-2 2-6 4-6s4 4 4 6v14"/>
-                <rect x="24" y="32" width="16" height="4"/>
-              </svg>
+              <span class="product-badge">Multiuso</span>
+              <img src="assets/images/products/prod-4-stick-blush-nude.jpg" alt="Atenea Stick Blush en Barra (Nude / Rose)" class="product-img" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="product-category">Mejillas / Rostro</span>
+              <h3 class="product-title">Atenea Stick Blush en Barra (Nude / Rose)</h3>
+              <p class="product-desc">Rubor cremoso en barra multiescena para mejillas y labios con difuminado suave y acabado fresco natural.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">34.000</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$34.000 COP</span>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Stick%20Blush%20en%20Barra%20%28Nude%20/%20Rose%29%2A%20%28%2434.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-4" data-product-name="Atenea Stick Blush en Barra (Nude / Rose)" data-product-price="$34.000 COP">
+                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                  </svg>
+                  Quiero este producto &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product prod-5 -->
+          <article class="product-card" data-product-id="prod-5">
+            <div class="product-thumb">
+              <span class="product-badge">Glow Radiante</span>
+              <img src="assets/images/products/prod-5-stick-shimmer-pink.jpg" alt="Atenea Stick Shimmer / Iluminador en Barra (Pink Shimmer)" class="product-img" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="product-category">Iluminación / Rostro</span>
+              <h3 class="product-title">Atenea Stick Shimmer / Iluminador en Barra (Pink Shimmer)</h3>
+              <p class="product-desc">Barra iluminadora cremosa con microperlas rosadas para resaltar pómulos, puente nasal y puntos de luz.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">34.000</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$34.000 COP</span>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Stick%20Shimmer%20/%20Iluminador%20en%20Barra%20%28Pink%20Shimmer%29%2A%20%28%2434.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-5" data-product-name="Atenea Stick Shimmer / Iluminador en Barra (Pink Shimmer)" data-product-price="$34.000 COP">
+                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                  </svg>
+                  Quiero este producto &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product prod-6 -->
+          <article class="product-card" data-product-id="prod-6">
+            <div class="product-thumb">
+              <span class="product-badge">Esculpido Fácil</span>
+              <img src="assets/images/products/prod-6-stick-bronzer-contour.jpg" alt="Atenea Stick Contour & Bronzer en Barra" class="product-img" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="product-category">Contorno / Rostro</span>
+              <h3 class="product-title">Atenea Stick Contour & Bronzer en Barra</h3>
+              <p class="product-desc">Barra cremosa de contorno y bronceado para esculpir y dar calidez al rostro con acabado sedoso mate.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">34.000</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$34.000 COP</span>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Stick%20Contour%20%26%20Bronzer%20en%20Barra%2A%20%28%2434.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-6" data-product-name="Atenea Stick Contour & Bronzer en Barra" data-product-price="$34.000 COP">
+                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                  </svg>
+                  Quiero este producto &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product prod-7 -->
+          <article class="product-card" data-product-id="prod-7">
+            <div class="product-thumb">
+              <span class="product-badge">Trío Especial</span>
+              <img src="assets/images/products/prod-7-peptide-lip-balm-trio.jpg" alt="Atenea Mini Peptide Lip Balm (Set x 3)" class="product-img" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="product-category">Labios / Cuidado</span>
+              <h3 class="product-title">Atenea Mini Peptide Lip Balm (Set x 3)</h3>
+              <p class="product-desc">Tratamiento labial reparador con péptidos en trío de sabores: Cherry Spark, Pink Sugar y Hot Chocolate.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">45.000 X 3</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$45.000 COP (Kit x 3)</span>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Mini%20Peptide%20Lip%20Balm%20%28Set%20x%203%29%2A%20%28%2445.000%20COP%20%28Kit%20x%203%29%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-7" data-product-name="Atenea Mini Peptide Lip Balm (Set x 3)" data-product-price="$45.000 COP (Kit x 3)">
+                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                  </svg>
+                  Quiero este producto &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product prod-8 -->
+          <article class="product-card" data-product-id="prod-8">
+            <div class="product-thumb">
+              <span class="product-badge">Acabado Velvet</span>
+              <img src="assets/images/products/prod-8-velvet-matte-tint.jpg" alt="Atenea Velvet Matte Lip Tint Mini" class="product-img" loading="lazy">
             </div>
             <div class="product-body">
               <span class="product-category">Labios</span>
-              <h3 class="product-title">Labial Líquido Velvet Matte "Rosa Nude"</h3>
-              <p class="product-desc">Textura aterciopelada de larga duración que no reseca ni cuartea los labios.</p>
+              <h3 class="product-title">Atenea Velvet Matte Lip Tint Mini</h3>
+              <p class="product-desc">Tinta de labios mate aterciopelada de sensación ultra liviana con aplicador de alta precisión.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">25.000</span>
+              </div>
               <div class="product-footer">
                 <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$48.000 COP</span>
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$25.000 COP</span>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2ALabial%20L%C3%ADquido%20Velvet%20Matte%20%22Rosa%20Nude%22%2A%20%28%2448.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-4" data-product-name="Labial Líquido Velvet Matte &quot;Rosa Nude&quot;" data-product-price="$48.000 COP">
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Velvet%20Matte%20Lip%20Tint%20Mini%2A%20%28%2425.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-8" data-product-name="Atenea Velvet Matte Lip Tint Mini" data-product-price="$25.000 COP">
                   <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
                   </svg>
@@ -345,141 +450,25 @@
             </div>
           </article>
 
-          <!-- Product 5 -->
-          <article class="product-card" data-product-id="prod-5">
-            <div class="product-thumb">
-              <span class="product-badge">Top Ventas</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 46l26-26 4 4-26 26-6 2 2-6z"/>
-                <path d="M40 24l4 4"/>
-                <path d="M14 50l-2 4"/>
-              </svg>
-            </div>
-            <div class="product-body">
-              <span class="product-category">Ojos</span>
-              <h3 class="product-title">Delineador Líquido Waterproof Ultra Preciso</h3>
-              <p class="product-desc">Punta pincel de 0.1 mm con negro intenso de secado ultra rápido sin manchas.</p>
-              <div class="product-footer">
-                <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$42.000 COP</span>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2ADelineador%20L%C3%ADquido%20Waterproof%20Ultra%20Preciso%2A%20%28%2442.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-5" data-product-name="Delineador Líquido Waterproof Ultra Preciso" data-product-price="$42.000 COP">
-                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                  </svg>
-                  Quiero este producto &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product 6 -->
-          <article class="product-card" data-product-id="prod-6">
-            <div class="product-thumb">
-              <span class="product-badge">Recomendado</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <ellipse cx="32" cy="36" rx="18" ry="10"/>
-                <path d="M14 36v8c0 5.5 8 10 18 10s18-4.5 18-10v-8"/>
-                <ellipse cx="32" cy="22" rx="18" ry="8"/>
-              </svg>
-            </div>
-            <div class="product-body">
-              <span class="product-category">Fijación & Rostro</span>
-              <h3 class="product-title">Polvo Traslúcido Suelto Microfino HD</h3>
-              <p class="product-desc">Efecto filtro aterciopelado que sella el maquillaje sin dejar flashback fotográfico.</p>
-              <div class="product-footer">
-                <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$58.000 COP</span>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2APolvo%20Trasl%C3%BAcido%20Suelto%20Microfino%20HD%2A%20%28%2458.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-6" data-product-name="Polvo Traslúcido Suelto Microfino HD" data-product-price="$58.000 COP">
-                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                  </svg>
-                  Quiero este producto &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product 7 -->
-          <article class="product-card" data-product-id="prod-7">
-            <div class="product-thumb">
-              <span class="product-badge">Edición Especial</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="32" cy="32" r="14"/>
-                <path d="M32 10v6m0 32v6m22-22h-6M16 32h-6"/>
-                <path d="M47 17l-4 4m-22 22l-4 4m30 0l-4-4M21 21l-4-4"/>
-              </svg>
-            </div>
-            <div class="product-body">
-              <span class="product-category">Rostro & Glow</span>
-              <h3 class="product-title">Iluminador Líquido "Champagne Glow" (15ml)</h3>
-              <p class="product-desc">Gotas de luz perlada modulables para pómulos, arco de cupido y clavículas.</p>
-              <div class="product-footer">
-                <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$52.000 COP</span>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AIluminador%20L%C3%ADquido%20%22Champagne%20Glow%22%20%2815ml%29%2A%20%28%2452.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-7" data-product-name="Iluminador Líquido &quot;Champagne Glow&quot; (15ml)" data-product-price="$52.000 COP">
-                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                  </svg>
-                  Quiero este producto &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product 8 -->
-          <article class="product-card" data-product-id="prod-8">
-            <div class="product-thumb">
-              <span class="product-badge">Kit Completo</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 52l12-32c1-2 4-2 5 0l3 8"/>
-                <path d="M38 18c2-4 8-4 10 0l-6 10"/>
-                <path d="M14 54l8-8"/>
-              </svg>
-            </div>
-            <div class="product-body">
-              <span class="product-category">Herramientas</span>
-              <h3 class="product-title">Set de Brochas Profesionales (10 Piezas)</h3>
-              <p class="product-desc">Cerdas sintéticas ultrasuaves de calidad premium con estuche organizador de lujo.</p>
-              <div class="product-footer">
-                <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$135.000 COP</span>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2ASet%20de%20Brochas%20Profesionales%20%2810%20Piezas%29%2A%20%28%24135.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-8" data-product-name="Set de Brochas Profesionales (10 Piezas)" data-product-price="$135.000 COP">
-                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-                  </svg>
-                  Quiero este producto &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Product 9 -->
+          <!-- Product prod-9 -->
           <article class="product-card" data-product-id="prod-9">
             <div class="product-thumb">
-              <span class="product-badge">Must-Have</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 36c6-10 24-10 36 0"/>
-                <path d="M20 28l-3-8m10 5l-1-9m8 7l2-9m8 11l4-8"/>
-              </svg>
+              <span class="product-badge">Tonos Nude</span>
+              <img src="assets/images/products/prod-9-slim-lipstick-duo.jpg" alt="Atenea Labial Slim en Barra (Bridal Rose / Classic Coffee)" class="product-img" loading="lazy">
             </div>
             <div class="product-body">
-              <span class="product-category">Ojos & Mirada</span>
-              <h3 class="product-title">Pestañas Postizas 3D Faux-Mink (Trío)</h3>
-              <p class="product-desc">Banda flexible y fibras ligeras de efecto dimensión natural, reusables hasta 15 veces.</p>
+              <span class="product-category">Labios</span>
+              <h3 class="product-title">Atenea Labial Slim en Barra (Bridal Rose / Classic Coffee)</h3>
+              <p class="product-desc">Labial cremoso en barra formato slim disponible en tonos icónicos nupciales Bridal Rose y Classic Coffee.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">25.000</span>
+              </div>
               <div class="product-footer">
                 <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$45.000 COP</span>
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$25.000 COP</span>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2APesta%C3%B1as%20Postizas%203D%20Faux-Mink%20%28Tr%C3%ADo%29%2A%20%28%2445.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-9" data-product-name="Pestañas Postizas 3D Faux-Mink (Trío)" data-product-price="$45.000 COP">
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Labial%20Slim%20en%20Barra%20%28Bridal%20Rose%20/%20Classic%20Coffee%29%2A%20%28%2425.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-9" data-product-name="Atenea Labial Slim en Barra (Bridal Rose / Classic Coffee)" data-product-price="$25.000 COP">
                   <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
                   </svg>
@@ -489,28 +478,81 @@
             </div>
           </article>
 
-          <!-- Product 10 -->
+          <!-- Product prod-10 -->
           <article class="product-card" data-product-id="prod-10">
             <div class="product-thumb">
-              <span class="product-badge">Dermo-Cuidado</span>
-              <svg class="product-icon-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="22" y="20" width="20" height="36" rx="5"/>
-                <path d="M28 20v-8h8v8"/>
-                <path d="M32 30v12"/>
-                <path d="M26 36h12"/>
-                <path d="M32 46h.01"/>
-              </svg>
+              <span class="product-badge">Efecto Cristal</span>
+              <img src="assets/images/products/prod-10-lip-gloss-trio.jpg" alt="Atenea 1st Scene Lip Gloss (Shell Coral / Coral Haze / Cool Ice)" class="product-img" loading="lazy">
             </div>
             <div class="product-body">
-              <span class="product-category">Cuidado Facial</span>
-              <h3 class="product-title">Aceite Limpiador Botánico Desmaquillante (100ml)</h3>
-              <p class="product-desc">Disuelve todo rastro de maquillaje a prueba de agua respetando la hidratación de la piel.</p>
+              <span class="product-category">Labios</span>
+              <h3 class="product-title">Atenea 1st Scene Lip Gloss (Shell Coral / Coral Haze / Cool Ice)</h3>
+              <p class="product-desc">Brillo labial ultra hidratante con destellos luminosos en tonos Shell Coral, Coral Haze y Cool Ice.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">32.000</span>
+              </div>
               <div class="product-footer">
                 <div class="product-price-row">
-                  <span class="product-price-label">Precio</span>
-                  <span class="product-price">$55.000 COP</span>
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$32.000 COP</span>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAceite%20Limpiador%20Bot%C3%A1nico%20Desmaquillante%20%28100ml%29%2A%20%28%2455.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-10" data-product-name="Aceite Limpiador Botánico Desmaquillante (100ml)" data-product-price="$55.000 COP">
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%201st%20Scene%20Lip%20Gloss%20%28Shell%20Coral%20/%20Coral%20Haze%20/%20Cool%20Ice%29%2A%20%28%2432.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-10" data-product-name="Atenea 1st Scene Lip Gloss (Shell Coral / Coral Haze / Cool Ice)" data-product-price="$32.000 COP">
+                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                  </svg>
+                  Quiero este producto &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product prod-11 -->
+          <article class="product-card" data-product-id="prod-11">
+            <div class="product-thumb">
+              <span class="product-badge">Nutrición & Brillo</span>
+              <img src="assets/images/products/prod-11-lip-oil-shimmer.jpg" alt="Atenea Lip Oil Shimmer (5ml)" class="product-img" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="product-category">Labios / Cuidado</span>
+              <h3 class="product-title">Atenea Lip Oil Shimmer (5ml)</h3>
+              <p class="product-desc">Aceite labial nutritivo enriquecido con microdestellos brillantes para labios hidratados y carnosos.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">28.000</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$28.000 COP</span>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Lip%20Oil%20Shimmer%20%285ml%29%2A%20%28%2428.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-11" data-product-name="Atenea Lip Oil Shimmer (5ml)" data-product-price="$28.000 COP">
+                  <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+                  </svg>
+                  Quiero este producto &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product prod-12 -->
+          <article class="product-card" data-product-id="prod-12">
+            <div class="product-thumb">
+              <span class="product-badge">Hidratación Diaria</span>
+              <img src="assets/images/products/prod-12-slim-lip-treatment.jpg" alt="Atenea Slim Lip Treatment / Bálsamo con Color" class="product-img" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="product-category">Labios / Cuidado</span>
+              <h3 class="product-title">Atenea Slim Lip Treatment / Bálsamo con Color</h3>
+              <p class="product-desc">Bálsamo labial nutritivo en barra delgada para acondicionar los labios diariamente con un toque de rubor sutil.</p>
+              <div class="product-flyer-pill">
+                <span class="flyer-price-number">24.000</span>
+              </div>
+              <div class="product-footer">
+                <div class="product-price-row">
+                  <span class="product-price-label">Inversión</span>
+                  <span class="product-price">$24.000 COP</span>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=573148492143&text=%C2%A1Hola%20Vane%21%20%E2%9C%A8%20Quiero%20este%20producto%3A%20%2AAtenea%20Slim%20Lip%20Treatment%20/%20B%C3%A1lsamo%20con%20Color%2A%20%28%2424.000%20COP%29.%0A%0A%C2%BFTienes%20disponibilidad%20para%20entrega%20o%20env%C3%ADo%20en%20Medell%C3%ADn%3F%20%C2%A1Quedo%20atenta%20para%20coordinar%20el%20pago%21%20%F0%9F%92%96" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-block btn-sm product-buy-btn" data-product-id="prod-12" data-product-name="Atenea Slim Lip Treatment / Bálsamo con Color" data-product-price="$24.000 COP">
                   <svg class="icon-wa" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.796.814 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm3.364 8.167c-.14.394-.712.723-1.002.766-.282.041-.65.069-1.049-.06-.24-.078-.553-.189-.958-.364-1.722-.746-2.844-2.505-2.93-2.619-.086-.115-.7-9.33-.7-1.787 0-.853.447-1.274.606-1.448.16-.174.348-.217.464-.217.116 0 .232.001.333.006.107.005.25.04.39.378.145.348.494 1.205.538 1.293.044.088.073.19.014.306-.058.117-.087.189-.174.29-.087.102-.183.228-.261.306-.087.087-.178.182-.077.356.101.174.45 7.42 1.026 1.488.741.66 1.365.864 1.558.951.194.087.309.073.424-.058.116-.131.494-.576.626-.774.131-.198.263-.165.441-.099.178.066 1.13.533 1.325.63.195.097.325.145.372.227.047.081.047.472-.093.866zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307C8.423 21.469 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
                   </svg>
@@ -524,7 +566,7 @@
         <div class="products-guarantee-banner">
           <div class="guarantee-item">
             <span class="guarantee-icon">✨</span>
-            <span>100% Originales & Recomendados por Vane</span>
+            <span>100% Originales Atenea & Curados por Vane</span>
           </div>
           <div class="guarantee-item">
             <span class="guarantee-icon">🛵</span>
@@ -532,7 +574,7 @@
           </div>
           <div class="guarantee-item">
             <span class="guarantee-icon">💬</span>
-            <span>Atención Directa y Asesoría por WhatsApp</span>
+            <span>Asesoría de Tonos y Pedido Directo por WhatsApp</span>
           </div>
         </div>
       </div>
@@ -849,6 +891,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
+        <img src="assets/images/vane-perez-logo.png" alt="Vane Pérez Logo" class="footer-logo-img">
         <span class="logo-title">VANE PÉREZ</span>
         <span class="logo-subtitle">MAKEUP ARTIST · MEDELLÍN</span>
         <p class="footer-tagline">Realzando tu belleza auténtica para los días más importantes de tu vida.</p>

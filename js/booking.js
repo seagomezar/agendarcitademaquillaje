@@ -19,93 +19,123 @@ const AVAILABLE_SERVICES = Object.freeze([
 const AVAILABLE_PRODUCTS = Object.freeze([
   {
     id: 'prod-1',
-    name: 'Fijador de Maquillaje Blindado (120ml)',
-    category: 'Fijación & Acabado',
-    price: 65000,
-    priceFormatted: '$65.000 COP',
-    description: 'Bruma microfina ultra resistente al agua, sudor y transferencias por más de 18 horas.',
-    badge: 'Bestseller'
+    name: 'Atenea 1st Scene Serum Tinted Foundation (30ml)',
+    category: 'Rostro / Piel',
+    price: 57000,
+    priceFormatted: '$57.000 COP',
+    image: 'assets/images/products/prod-1-serum-foundation.jpg',
+    description: 'Base en sérum con color que hidrata profundamente, unifica el tono y brinda luminosidad natural.',
+    badge: 'Serum Glow'
   },
   {
     id: 'prod-2',
-    name: 'Sérum Facial Hidratante & Primer Glow (30ml)',
-    category: 'Preparación de Piel',
-    price: 85000,
-    priceFormatted: '$85.000 COP',
-    description: 'Con ácido hialurónico y niacinamida para alisar la textura y aportar luminosidad natural.',
-    badge: 'Favorito'
+    name: 'Atenea 1st Scene Liquid Foundation (30ml)',
+    category: 'Rostro / Piel',
+    price: 43000,
+    priceFormatted: '$43.000 COP',
+    image: 'assets/images/products/prod-2-liquid-foundation.jpg',
+    description: 'Base líquida de cobertura modulable con acabado satinado profesional de larga duración.',
+    badge: 'Bestseller'
   },
   {
     id: 'prod-3',
-    name: 'Paleta de Sombras "Medellín Golden Hour"',
-    category: 'Ojos',
-    price: 110000,
-    priceFormatted: '$110.000 COP',
-    description: '12 sombras ultra pigmentadas en acabados mate, satinado y metalizado de tonos cálidos.',
-    badge: 'Nuevo'
+    name: 'Atenea 1st Scene Corrector & Concealer (10ml)',
+    category: 'Rostro / Ojos',
+    price: 37000,
+    priceFormatted: '$37.000 COP',
+    image: 'assets/images/products/prod-3-concealer.jpg',
+    description: 'Corrector líquido de alta cobertura con cafeína y ácido hialurónico para disimular ojeras e imperfecciones.',
+    badge: 'Alta Cobertura'
   },
   {
     id: 'prod-4',
-    name: 'Labial Líquido Velvet Matte "Rosa Nude"',
-    category: 'Labios',
-    price: 48000,
-    priceFormatted: '$48.000 COP',
-    description: 'Textura aterciopelada de larga duración que no reseca ni cuartea los labios.',
-    badge: 'Esencial'
+    name: 'Atenea Stick Blush en Barra (Nude / Rose)',
+    category: 'Mejillas / Rostro',
+    price: 34000,
+    priceFormatted: '$34.000 COP',
+    image: 'assets/images/products/prod-4-stick-blush-nude.jpg',
+    description: 'Rubor cremoso en barra multiescena para mejillas y labios con acabado natural difuminable.',
+    badge: 'Multiuso'
   },
   {
     id: 'prod-5',
-    name: 'Delineador Líquido Waterproof Ultra Preciso',
-    category: 'Ojos',
-    price: 42000,
-    priceFormatted: '$42.000 COP',
-    description: 'Punta pincel de 0.1 mm con negro intenso de secado ultra rápido sin manchas.',
-    badge: 'Top Ventas'
+    name: 'Atenea Stick Shimmer / Iluminador en Barra (Pink Shimmer)',
+    category: 'Iluminación / Rostro',
+    price: 34000,
+    priceFormatted: '$34.000 COP',
+    image: 'assets/images/products/prod-5-stick-shimmer-pink.jpg',
+    description: 'Barra iluminadora cremosa con microperlas rosadas para resaltar puntos de luz en el rostro.',
+    badge: 'Glow Radiante'
   },
   {
     id: 'prod-6',
-    name: 'Polvo Traslúcido Suelto Microfino HD',
-    category: 'Fijación & Rostro',
-    price: 58000,
-    priceFormatted: '$58.000 COP',
-    description: 'Efecto filtro aterciopelado que sella el maquillaje sin dejar flashback fotográfico.',
-    badge: 'Recomendado'
+    name: 'Atenea Stick Contour & Bronzer en Barra',
+    category: 'Contorno / Rostro',
+    price: 34000,
+    priceFormatted: '$34.000 COP',
+    image: 'assets/images/products/prod-6-stick-bronzer-contour.jpg',
+    description: 'Barra cremosa de contorno y bronceado para esculpir facciones con acabado sedoso mate.',
+    badge: 'Esculpido Fácil'
   },
   {
     id: 'prod-7',
-    name: 'Iluminador Líquido "Champagne Glow" (15ml)',
-    category: 'Rostro & Glow',
-    price: 52000,
-    priceFormatted: '$52.000 COP',
-    description: 'Gotas de luz perlada modulables para pómulos, arco de cupido y clavículas.',
-    badge: 'Edición Especial'
+    name: 'Atenea Mini Peptide Lip Balm (Set x 3)',
+    category: 'Labios / Cuidado',
+    price: 45000,
+    priceFormatted: '$45.000 COP (Kit x 3)',
+    image: 'assets/images/products/prod-7-peptide-lip-balm-trio.jpg',
+    description: 'Tratamiento labial reparador con péptidos en trío de sabores: Cherry Spark, Pink Sugar y Hot Chocolate.',
+    badge: 'Trío Especial'
   },
   {
     id: 'prod-8',
-    name: 'Set de Brochas Profesionales (10 Piezas)',
-    category: 'Herramientas',
-    price: 135000,
-    priceFormatted: '$135.000 COP',
-    description: 'Cerdas sintéticas ultrasuaves de calidad premium con estuche organizador de lujo.',
-    badge: 'Kit Completo'
+    name: 'Atenea Velvet Matte Lip Tint Mini',
+    category: 'Labios',
+    price: 25000,
+    priceFormatted: '$25.000 COP',
+    image: 'assets/images/products/prod-8-velvet-matte-tint.jpg',
+    description: 'Tinta labial mate aterciopelada de textura ligera con aplicador de precisión e intransferible.',
+    badge: 'Acabado Velvet'
   },
   {
     id: 'prod-9',
-    name: 'Pestañas Postizas 3D Faux-Mink (Trío)',
-    category: 'Ojos & Mirada',
-    price: 45000,
-    priceFormatted: '$45.000 COP',
-    description: 'Banda flexible y fibras ligeras de efecto dimensión natural, reusables hasta 15 veces.',
-    badge: 'Must-Have'
+    name: 'Atenea Labial Slim en Barra (Bridal Rose / Classic Coffee)',
+    category: 'Labios',
+    price: 25000,
+    priceFormatted: '$25.000 COP',
+    image: 'assets/images/products/prod-9-slim-lipstick-duo.jpg',
+    description: 'Labial cremoso en barra delgada en tonos icónicos elegantes Bridal Rose y Classic Coffee.',
+    badge: 'Tonos Nude'
   },
   {
     id: 'prod-10',
-    name: 'Aceite Limpiador Botánico Desmaquillante (100ml)',
-    category: 'Cuidado Facial',
-    price: 55000,
-    priceFormatted: '$55.000 COP',
-    description: 'Disuelve todo rastro de maquillaje a prueba de agua respetando la hidratación de la piel.',
-    badge: 'Dermo-Cuidado'
+    name: 'Atenea 1st Scene Lip Gloss (Shell Coral / Coral Haze / Cool Ice)',
+    category: 'Labios',
+    price: 32000,
+    priceFormatted: '$32.000 COP',
+    image: 'assets/images/products/prod-10-lip-gloss-trio.jpg',
+    description: 'Brillo para labios ultra hidratante de efecto cristal en tonos Shell Coral, Coral Haze y Cool Ice.',
+    badge: 'Efecto Cristal'
+  },
+  {
+    id: 'prod-11',
+    name: 'Atenea Lip Oil Shimmer (5ml)',
+    category: 'Labios / Cuidado',
+    price: 28000,
+    priceFormatted: '$28.000 COP',
+    image: 'assets/images/products/prod-11-lip-oil-shimmer.jpg',
+    description: 'Aceite nutritivo para labios con destellos sutiles y nutrición profunda sin sensación pegajosa.',
+    badge: 'Nutrición & Brillo'
+  },
+  {
+    id: 'prod-12',
+    name: 'Atenea Slim Lip Treatment / Bálsamo con Color',
+    category: 'Labios / Cuidado',
+    price: 24000,
+    priceFormatted: '$24.000 COP',
+    image: 'assets/images/products/prod-12-slim-lip-treatment.jpg',
+    description: 'Bálsamo labial nutritivo en barra delgada para hidratación diaria y un sutil toque de color fresco.',
+    badge: 'Hidratación Diaria'
   }
 ]);
 
