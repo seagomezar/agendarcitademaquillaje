@@ -9,7 +9,55 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceSelectButtons();
   initProductPurchaseButtons();
   initDateConstraints();
+  initMobileMenu();
 });
+
+/**
+ * Initializes the mobile & tablet drawer navigation menu.
+ */
+function initMobileMenu() {
+  const toggleBtn = document.getElementById('nav-toggle');
+  const closeBtn = document.getElementById('nav-close');
+  const drawer = document.getElementById('mobile-menu-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  if (!toggleBtn || !drawer || !backdrop) return;
+
+  function openMenu() {
+    drawer.classList.add('is-open');
+    backdrop.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    backdrop.setAttribute('aria-hidden', 'false');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    backdrop.setAttribute('aria-hidden', 'true');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggleBtn.addEventListener('click', openMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  backdrop.addEventListener('click', closeMenu);
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+}
 
 /**
  * Initializes the appointment booking form.

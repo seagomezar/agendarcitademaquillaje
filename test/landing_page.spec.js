@@ -44,7 +44,13 @@ const requiredSectionIds = ['hero', 'services', 'products', 'booking-section', '
 requiredSectionIds.forEach(id => {
   assert.ok(htmlContent.includes(`id="${id}"`), `Section #${id} must exist in HTML`);
 });
-console.log('✓ All 8 core sections and Favicon assets exist in DOM and disk\n');
+
+// Navigation Elements & Luxury Slide-out Drawer
+assert.ok(htmlContent.includes('id="nav-toggle"'), 'Mobile navigation toggle button (#nav-toggle) must exist');
+assert.ok(htmlContent.includes('id="nav-close"'), 'Mobile drawer close button (#nav-close) must exist');
+assert.ok(htmlContent.includes('id="mobile-menu-drawer"'), 'Mobile navigation drawer (#mobile-menu-drawer) must exist');
+assert.ok(htmlContent.includes('id="drawer-backdrop"'), 'Mobile drawer backdrop (#drawer-backdrop) must exist');
+console.log('✓ All 8 core sections, Favicon assets, and slide-out navigation drawer exist in DOM and disk\n');
 
 // 3. Verify WhatsApp CTAs & Official Phone Number (+57 314 849 2143)
 console.log('3. Validating Call-To-Action (CTA) WhatsApp Integrations & Official Number...');
@@ -117,10 +123,13 @@ assert.ok(cssContent.includes('--color-bg: #FFF8F5;'), 'Ivory background token m
 assert.ok(cssContent.includes('--color-gold: #C5A059;'), 'Gold metallic accent token must be defined');
 assert.ok(cssContent.includes('--color-espresso: #221A14;'), 'Espresso text token must be defined');
 assert.ok(cssContent.includes('Playfair Display'), 'Playfair Display font family must be configured');
+assert.ok(cssContent.includes('@media (min-width: 993px) and (max-width: 1200px)'), 'Medium desktop responsive breakpoint (993px-1200px) must exist');
 assert.ok(cssContent.includes('@media (max-width: 768px)'), 'Mobile responsive breakpoint 768px must exist');
 assert.ok(cssContent.includes('@media (max-width: 680px)'), 'Mobile responsive breakpoint 680px for product grid must exist');
 assert.ok(cssContent.includes('@media (max-width: 520px)'), 'Mobile responsive breakpoint 520px for header and layout must exist');
-console.log('✓ Stitch design tokens & mobile responsive CSS verified\n');
+assert.ok(cssContent.includes('.mobile-menu-drawer'), 'Mobile navigation drawer CSS must exist');
+assert.ok(cssContent.includes('.nav-toggle-btn'), 'Mobile navigation toggle button CSS must exist');
+console.log('✓ Stitch design tokens, medium desktop nowrap layout & mobile responsive CSS verified\n');
 
 console.log('====================================================');
 console.log('🎉 QA VERIFICATION COMPLETE: ALL 6 AUDITS PASSED!');

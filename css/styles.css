@@ -185,6 +185,7 @@ ul {
   letter-spacing: 0.04em;
   padding: 6px 0;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -206,6 +207,210 @@ ul {
   width: 100%;
 }
 
+/* Header Actions & Mobile Navigation Toggle */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.nav-toggle-btn {
+  display: none; /* Hidden on large desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 42px;
+  height: 42px;
+  padding: 10px 9px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sharp);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.nav-toggle-btn:hover {
+  border-color: var(--color-gold);
+  background: #FFF;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-espresso);
+  border-radius: 1px;
+  transition: all 0.25s ease;
+}
+
+/* Slide-out Navigation Drawer & Backdrop */
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 26, 20, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 360px;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(255, 248, 245, 0.98);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid var(--color-border);
+  box-shadow: -10px 0 35px rgba(34, 26, 20, 0.15);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
+  overflow-y: auto;
+}
+
+.mobile-menu-drawer.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drawer-logo-img {
+  height: 26px;
+  width: auto;
+}
+
+.drawer-logo-title {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-espresso);
+}
+
+.drawer-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #FFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sharp);
+  color: var(--color-espresso);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.drawer-nav {
+  flex: 1;
+  padding: 24px 20px;
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-espresso);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.drawer-num {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+.drawer-link:hover,
+.drawer-link:focus {
+  background: rgba(197, 160, 89, 0.12);
+  color: var(--color-gold);
+  transform: translateX(4px);
+}
+
+.drawer-footer {
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.drawer-cta {
+  width: 100%;
+  padding: 13px;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+}
+
+.drawer-contact-info {
+  font-size: 0.76rem;
+  color: var(--color-espresso-muted);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.drawer-ig-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 600;
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.drawer-ig-link:hover {
+  text-decoration: underline;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -222,6 +427,7 @@ ul {
   transition: all 0.3s ease;
   padding: 12px 24px;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .btn-sm {
@@ -1440,7 +1646,72 @@ section {
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
+/* Medium desktop & small laptops: refine spacing so links never break into 2 lines */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .nav-container {
+    gap: 16px;
+  }
+
+  .brand-logo {
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .brand-logo-img {
+    height: 28px;
+  }
+
+  .logo-title {
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+  }
+
+  .logo-subtitle {
+    display: none; /* Frees up >150px of horizontal room */
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    padding: 6px 2px;
+  }
+
+  #header-whatsapp-cta {
+    padding: 8px 14px;
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 992px) {
+  .nav-links {
+    display: none !important; /* Tablets and phones use luxury slide-out drawer */
+  }
+
+  .nav-toggle-btn {
+    display: flex;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-subtitle {
+    display: none; /* Keep header uncluttered on tablet and mobile */
+  }
+
+  .brand-logo-img {
+    height: 30px;
+  }
+
   .hero-grid,
   .about-grid,
   .booking-card-wrapper {
@@ -1469,7 +1740,7 @@ section {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Mobile navigation prioritizes the direct conversion CTA */
+    display: none !important; /* Mobile navigation prioritizes the direct conversion CTA */
   }
 
   .site-header {
@@ -1482,29 +1753,39 @@ section {
   }
 
   .brand-logo {
-    gap: 10px;
+    gap: 8px;
     min-width: 0;
     flex-shrink: 1;
   }
 
   .brand-logo-img {
-    height: 28px;
+    height: 26px;
     flex-shrink: 0;
   }
 
   .logo-title {
-    font-size: 1.12rem;
-    letter-spacing: 0.08em;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
     white-space: nowrap;
   }
 
   .logo-subtitle {
-    font-size: 0.58rem;
-    letter-spacing: 0.16em;
+    display: none;
   }
 
   .header-actions {
+    gap: 8px;
     flex-shrink: 0;
+  }
+
+  .nav-toggle-btn {
+    width: 38px;
+    height: 38px;
+    padding: 9px 8px;
+  }
+
+  .mobile-menu-drawer {
+    max-width: 320px;
   }
 
   #header-whatsapp-cta {
@@ -1552,16 +1833,26 @@ section {
   }
 
   .brand-logo-img {
-    height: 22px;
+    display: none; /* Keep mobile header clean and editorial with serif typography */
   }
 
   .logo-title {
-    font-size: 1.02rem;
-    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
   }
 
   .logo-subtitle {
     display: none; /* Keep header compact and uncluttered on narrow mobile screens */
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .nav-toggle-btn {
+    width: 36px;
+    height: 36px;
+    padding: 8px 6px;
   }
 
   #header-whatsapp-cta {
@@ -1573,6 +1864,10 @@ section {
   #header-whatsapp-cta svg {
     width: 15px;
     height: 15px;
+  }
+
+  .mobile-menu-drawer {
+    max-width: 86vw;
   }
 
   .boutique-logo-img {
