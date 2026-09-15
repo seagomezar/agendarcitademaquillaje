@@ -62,9 +62,14 @@ assert.ok(htmlContent.includes('https://api.whatsapp.com/send?phone=573148492143
 assert.ok(htmlContent.includes('target="_blank"'), 'External WhatsApp links must open in new tab');
 assert.ok(htmlContent.includes('rel="noopener noreferrer"'), 'External links must use secure noopener noreferrer');
 
-// Verify Products Section & "Quiero este producto" CTAs
-assert.ok(htmlContent.includes('Mis preferidos del mes'), 'Section title must be "Mis preferidos del mes"');
-assert.ok(htmlContent.includes('vane-perez-logo.png'), 'Brand botanical logo must be present');
+// Verify Boutique Section, Haute-Couture VP Branding & "Quiero este producto" CTAs
+assert.ok(htmlContent.includes('Boutique &amp; Maquillaje para Venta') || htmlContent.includes('Maquillaje para Venta'), 'Section title must reference Boutique & Maquillaje para Venta');
+assert.ok(htmlContent.includes('class="brand-monogram">VP</span>'), 'Haute-couture VP monogram must be present');
+assert.ok(htmlContent.includes('Dior Backstage'), 'High-end kit distinction notice must reference Dior Backstage');
+assert.ok(htmlContent.includes('Haus Labs'), 'High-end kit distinction notice must reference Haus Labs');
+assert.ok(htmlContent.includes('class="product-filter-tabs"'), 'Boutique filter tabs must exist in DOM');
+assert.ok(htmlContent.includes('class="portfolio-filter-tabs"'), 'Portfolio filter tabs must exist in DOM');
+assert.ok(htmlContent.includes('id="testimonials-track"'), 'Testimonials carousel track must exist in DOM');
 
 for (let i = 1; i <= 12; i++) {
   assert.ok(htmlContent.includes(`data-product-id="prod-${i}"`), `Product prod-${i} must exist in DOM`);
