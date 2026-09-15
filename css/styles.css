@@ -1653,29 +1653,19 @@ section {
   }
 
   .brand-logo {
-    gap: 10px;
     flex-shrink: 0;
   }
 
   .brand-logo-img {
-    height: 28px;
-  }
-
-  .logo-title {
-    font-size: 1.15rem;
-    letter-spacing: 0.08em;
-  }
-
-  .logo-subtitle {
-    display: none; /* Frees up >150px of horizontal room */
+    height: 34px;
   }
 
   .nav-links {
-    gap: 16px;
+    gap: 18px;
   }
 
   .nav-links a {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     letter-spacing: 0.03em;
     white-space: nowrap;
     padding: 6px 2px;
@@ -1833,16 +1823,8 @@ section {
   }
 
   .brand-logo-img {
-    display: none; /* Keep mobile header clean and editorial with serif typography */
-  }
-
-  .logo-title {
-    font-size: 1.05rem;
-    letter-spacing: 0.06em;
-  }
-
-  .logo-subtitle {
-    display: none; /* Keep header compact and uncluttered on narrow mobile screens */
+    height: 24px;
+    display: block;
   }
 
   .header-actions {
