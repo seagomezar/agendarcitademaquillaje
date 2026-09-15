@@ -6,7 +6,7 @@
  */
 
 const DEFAULT_COUNTRY_CODE = '57';
-const DEFAULT_PHONE_NUMBER = '573002345678';
+const DEFAULT_PHONE_NUMBER = '573148492143';
 
 const AVAILABLE_SERVICES = Object.freeze([
   { id: 'bridal', name: 'Novias / Bridal Glam Luxury', priceEstimate: 'Desde $350.000 COP' },
@@ -14,6 +14,99 @@ const AVAILABLE_SERVICES = Object.freeze([
   { id: 'quince', name: 'Quinceañeras & Sweet 15', priceEstimate: 'Desde $220.000 COP' },
   { id: 'editorial', name: 'Editorial & Sesiones de Fotos', priceEstimate: 'Cotización personalizada' },
   { id: 'classes', name: 'Clase VIP de Automaquillaje', priceEstimate: 'Desde $250.000 COP' }
+]);
+
+const AVAILABLE_PRODUCTS = Object.freeze([
+  {
+    id: 'prod-1',
+    name: 'Fijador de Maquillaje Blindado (120ml)',
+    category: 'Fijación & Acabado',
+    price: 65000,
+    priceFormatted: '$65.000 COP',
+    description: 'Bruma microfina ultra resistente al agua, sudor y transferencias por más de 18 horas.',
+    badge: 'Bestseller'
+  },
+  {
+    id: 'prod-2',
+    name: 'Sérum Facial Hidratante & Primer Glow (30ml)',
+    category: 'Preparación de Piel',
+    price: 85000,
+    priceFormatted: '$85.000 COP',
+    description: 'Con ácido hialurónico y niacinamida para alisar la textura y aportar luminosidad natural.',
+    badge: 'Favorito'
+  },
+  {
+    id: 'prod-3',
+    name: 'Paleta de Sombras "Medellín Golden Hour"',
+    category: 'Ojos',
+    price: 110000,
+    priceFormatted: '$110.000 COP',
+    description: '12 sombras ultra pigmentadas en acabados mate, satinado y metalizado de tonos cálidos.',
+    badge: 'Nuevo'
+  },
+  {
+    id: 'prod-4',
+    name: 'Labial Líquido Velvet Matte "Rosa Nude"',
+    category: 'Labios',
+    price: 48000,
+    priceFormatted: '$48.000 COP',
+    description: 'Textura aterciopelada de larga duración que no reseca ni cuartea los labios.',
+    badge: 'Esencial'
+  },
+  {
+    id: 'prod-5',
+    name: 'Delineador Líquido Waterproof Ultra Preciso',
+    category: 'Ojos',
+    price: 42000,
+    priceFormatted: '$42.000 COP',
+    description: 'Punta pincel de 0.1 mm con negro intenso de secado ultra rápido sin manchas.',
+    badge: 'Top Ventas'
+  },
+  {
+    id: 'prod-6',
+    name: 'Polvo Traslúcido Suelto Microfino HD',
+    category: 'Fijación & Rostro',
+    price: 58000,
+    priceFormatted: '$58.000 COP',
+    description: 'Efecto filtro aterciopelado que sella el maquillaje sin dejar flashback fotográfico.',
+    badge: 'Recomendado'
+  },
+  {
+    id: 'prod-7',
+    name: 'Iluminador Líquido "Champagne Glow" (15ml)',
+    category: 'Rostro & Glow',
+    price: 52000,
+    priceFormatted: '$52.000 COP',
+    description: 'Gotas de luz perlada modulables para pómulos, arco de cupido y clavículas.',
+    badge: 'Edición Especial'
+  },
+  {
+    id: 'prod-8',
+    name: 'Set de Brochas Profesionales (10 Piezas)',
+    category: 'Herramientas',
+    price: 135000,
+    priceFormatted: '$135.000 COP',
+    description: 'Cerdas sintéticas ultrasuaves de calidad premium con estuche organizador de lujo.',
+    badge: 'Kit Completo'
+  },
+  {
+    id: 'prod-9',
+    name: 'Pestañas Postizas 3D Faux-Mink (Trío)',
+    category: 'Ojos & Mirada',
+    price: 45000,
+    priceFormatted: '$45.000 COP',
+    description: 'Banda flexible y fibras ligeras de efecto dimensión natural, reusables hasta 15 veces.',
+    badge: 'Must-Have'
+  },
+  {
+    id: 'prod-10',
+    name: 'Aceite Limpiador Botánico Desmaquillante (100ml)',
+    category: 'Cuidado Facial',
+    price: 55000,
+    priceFormatted: '$55.000 COP',
+    description: 'Disuelve todo rastro de maquillaje a prueba de agua respetando la hidratación de la piel.',
+    badge: 'Dermo-Cuidado'
+  }
 ]);
 
 /**
@@ -128,26 +221,49 @@ function buildWhatsAppBookingUrl(options) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
+/**
+ * Formats beauty product purchase request and creates the direct WhatsApp URL.
+ * User requirement: "que para comprar algun product redirija whatssap con un mensaje quiero este producto"
+ * @param {string} productName
+ * @param {string|number} [productPrice]
+ * @param {string} [phone]
+ * @returns {string} WhatsApp direct link
+ */
+function buildWhatsAppProductUrl(productName, productPrice, phone = DEFAULT_PHONE_NUMBER) {
+  const targetPhone = sanitizePhoneNumber(phone);
+  const cleanName = sanitizeInputText(productName) || 'Producto de Belleza';
+  const priceInfo = productPrice ? ` (${sanitizeInputText(String(productPrice))})` : '';
+
+  const message = `¡Hola Vane! ✨ Quiero este producto: *${cleanName}*${priceInfo}.\n\n¿Tienes disponibilidad para entrega o envío en Medellín? ¡Quedo atenta para coordinar el pago! 💖`;
+
+  return `https://wa.me/${targetPhone}?text=${encodeURIComponent(message)}`;
+}
+
 // Module export for Node.js test runners & Browser global attachment
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     DEFAULT_PHONE_NUMBER,
     AVAILABLE_SERVICES,
+    AVAILABLE_PRODUCTS,
     sanitizeInputText,
     sanitizePhoneNumber,
     isDatePresentOrFuture,
     validateBookingDetails,
-    buildWhatsAppBookingUrl
+    buildWhatsAppBookingUrl,
+    buildWhatsAppProductUrl
   };
 }
 if (typeof window !== 'undefined') {
   window.BookingLogic = {
     DEFAULT_PHONE_NUMBER,
     AVAILABLE_SERVICES,
+    AVAILABLE_PRODUCTS,
     sanitizeInputText,
     sanitizePhoneNumber,
     isDatePresentOrFuture,
     validateBookingDetails,
-    buildWhatsAppBookingUrl
+    buildWhatsAppBookingUrl,
+    buildWhatsAppProductUrl
   };
 }
+

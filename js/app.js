@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initBookingForm();
   initServiceSelectButtons();
+  initProductPurchaseButtons();
   initDateConstraints();
 });
 
@@ -78,7 +79,7 @@ function initBookingForm() {
     // Build the WhatsApp direct booking URL using domain logic
     const waUrl = window.BookingLogic ? 
       window.BookingLogic.buildWhatsAppBookingUrl(bookingData) : 
-      `https://wa.me/573002345678?text=${encodeURIComponent('Hola Vane, quisiera agendar una cita')}`;
+      `https://wa.me/573148492143?text=${encodeURIComponent('Hola Vane, quisiera agendar una cita')}`;
 
     // Open WhatsApp directly
     window.open(waUrl, '_blank', 'noopener,noreferrer');
@@ -112,6 +113,27 @@ function initServiceSelectButtons() {
 }
 
 /**
+ * Handles clicks on beauty product WhatsApp purchase buttons.
+ * User requirement: "que para comprar algun product redirija whatssap con un mensaje quiero este producto"
+ */
+function initProductPurchaseButtons() {
+  const productButtons = document.querySelectorAll('.product-buy-btn');
+
+  productButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const productName = button.getAttribute('data-product-name');
+      const productPrice = button.getAttribute('data-product-price');
+
+      if (window.BookingLogic && productName) {
+        e.preventDefault();
+        const productUrl = window.BookingLogic.buildWhatsAppProductUrl(productName, productPrice);
+        window.open(productUrl, '_blank', 'noopener,noreferrer');
+      }
+    });
+  });
+}
+
+/**
  * Sets minimum booking date to today so users cannot select past dates.
  */
 function initDateConstraints() {
@@ -124,3 +146,4 @@ function initDateConstraints() {
   const dd = String(today.getDate()).padStart(2, '0');
   dateInput.min = `${yyyy}-${mm}-${dd}`;
 }
+

@@ -1,6 +1,5 @@
-// SwarmForge four-pack: refactorer property & invariant tests
 const assert = require('assert');
-const { buildWhatsAppBookingUrl, sanitizePhoneNumber, validateBookingDetails } = require('../js/booking.js');
+const { buildWhatsAppBookingUrl, buildWhatsAppProductUrl, sanitizePhoneNumber, validateBookingDetails } = require('../js/booking.js');
 
 console.log('--- Running Refactorer Property & Invariant Tests ---');
 
@@ -8,9 +7,9 @@ console.log('--- Running Refactorer Property & Invariant Tests ---');
 const samplePhones = [
   '',
   ' ',
-  '+57 (300) 123-4567',
-  '312-987-6543',
-  'abc573009998888xyz',
+  '+57 (314) 849-2143',
+  '314-849-2143',
+  'abc573148492143xyz',
   '0000000000',
   null,
   undefined,
@@ -46,4 +45,22 @@ assert.strictEqual(validateBookingDetails({}).isValid, false);
 assert.strictEqual(validateBookingDetails({ clientName: '   ' }).isValid, false);
 console.log('✓ Invariant 3: Extreme payload validation passed');
 
+// Invariant 4: buildWhatsAppProductUrl stability & "Quiero este producto" invariant
+const productCases = [
+  ['', ''],
+  ['Fijador de Maquillaje Blindado', '$65.000 COP'],
+  ['<script>alert("xss")</script>Labial', 48000],
+  ['Brochas & Pestañas ✨💖', null]
+];
+
+productCases.forEach(([name, price], idx) => {
+  const url = buildWhatsAppProductUrl(name, price);
+  assert.ok(url.startsWith('https://wa.me/573148492143?text='), `Product case ${idx} must target official phone`);
+  assert.ok(url.includes('Quiero%20este%20producto'), `Product case ${idx} must include "Quiero este producto"`);
+  assert.ok(!url.includes(' '), `Product case ${idx} must have no raw spaces`);
+  assert.doesNotThrow(() => decodeURIComponent(url), `Product case ${idx} must decode cleanly`);
+});
+console.log('✓ Invariant 4: Product purchase URL encoding & invariant passed');
+
 console.log('All Refactorer invariant tests passed successfully!\n');
+

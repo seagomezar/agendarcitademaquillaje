@@ -4,7 +4,8 @@ const {
   sanitizeInputText,
   isDatePresentOrFuture,
   validateBookingDetails,
-  buildWhatsAppBookingUrl
+  buildWhatsAppBookingUrl,
+  buildWhatsAppProductUrl
 } = require('../js/booking.js');
 
 console.log('--- Running Hardender Mutation & Defensive Tests ---');
@@ -58,4 +59,15 @@ console.log('--- Running Hardender Mutation & Defensive Tests ---');
   console.log('✓ Emoji & unicode preservation passed');
 }
 
+// Test 5: Product URL defends against malicious inputs and preserves accents
+{
+  const prodUrl = buildWhatsAppProductUrl('<img src=x onerror=alert(1)>Polvo Traslúcido Suelto HD', '$58.000 COP');
+  const decodedProd = decodeURIComponent(prodUrl);
+  assert.ok(!decodedProd.includes('<img'), 'Must strip img tag from product message');
+  assert.ok(decodedProd.includes('Polvo Traslúcido Suelto HD'), 'Must preserve accents');
+  assert.ok(decodedProd.includes('Quiero este producto'), 'Must contain user required phrase');
+  console.log('✓ Product URL defense & unicode preservation passed');
+}
+
 console.log('All Hardender tests passed successfully!\n');
+

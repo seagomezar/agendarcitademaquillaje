@@ -33,21 +33,31 @@ assert.ok(htmlContent.includes('<title>Vane Pérez | Makeup Artist Medellín'), 
 assert.ok(htmlContent.includes('<html lang="es">'), 'HTML lang attribute must be Spanish (es)');
 
 // Key Landmark Sections
-const requiredSectionIds = ['hero', 'services', 'booking-section', 'portfolio', 'about', 'testimonials', 'faq'];
+const requiredSectionIds = ['hero', 'services', 'products', 'booking-section', 'portfolio', 'about', 'testimonials', 'faq'];
 requiredSectionIds.forEach(id => {
   assert.ok(htmlContent.includes(`id="${id}"`), `Section #${id} must exist in HTML`);
 });
-console.log('✓ All 7 core sections exist in DOM\n');
+console.log('✓ All 8 core sections (including #products) exist in DOM\n');
 
-// 3. Verify WhatsApp CTAs
-console.log('3. Validating Call-To-Action (CTA) WhatsApp Integrations...');
+// 3. Verify WhatsApp CTAs & Official Phone Number (+57 314 849 2143)
+console.log('3. Validating Call-To-Action (CTA) WhatsApp Integrations & Official Number...');
+assert.ok(!htmlContent.includes('573002345678'), 'Old placeholder phone 573002345678 must not exist');
+assert.ok(htmlContent.includes('573148492143'), 'Official phone 573148492143 must be present');
 assert.ok(htmlContent.includes('id="hero-primary-cta"'), 'Hero primary CTA button must exist');
 assert.ok(htmlContent.includes('id="floating-whatsapp-btn"'), 'Floating persistent WhatsApp button must exist');
 assert.ok(htmlContent.includes('id="submit-booking-btn"'), 'Form submit WhatsApp CTA button must exist');
-assert.ok(htmlContent.includes('https://wa.me/57'), 'WhatsApp links must use Colombian international prefix 57');
+assert.ok(htmlContent.includes('https://wa.me/573148492143'), 'WhatsApp links must target official wa.me/573148492143');
 assert.ok(htmlContent.includes('target="_blank"'), 'External WhatsApp links must open in new tab');
 assert.ok(htmlContent.includes('rel="noopener noreferrer"'), 'External links must use secure noopener noreferrer');
-console.log('✓ All WhatsApp CTA buttons verified and properly secured\n');
+
+// Verify Products Section & "Quiero este producto" CTAs
+for (let i = 1; i <= 10; i++) {
+  assert.ok(htmlContent.includes(`data-product-id="prod-${i}"`), `Product prod-${i} must exist in DOM`);
+}
+const productBtnCount = (htmlContent.match(/class="[^"]*product-buy-btn[^"]*"/g) || []).length;
+assert.strictEqual(productBtnCount, 10, 'Must have exactly 10 product purchase buttons');
+assert.ok(htmlContent.includes('Quiero%20este%20producto'), 'Product buttons must prefill "Quiero este producto"');
+console.log('✓ All 10 beauty products and official WhatsApp (+57 314 849 2143) links verified\n');
 
 // 4. Verify Instagram Branding & Links
 console.log('4. Checking Instagram Profile Integration (@vaneperezmakeup)...');
@@ -77,9 +87,9 @@ expectedImages.forEach(imgName => {
   const imgFile = path.join(projectRoot, 'assets', 'images', imgName);
   assert.ok(fs.existsSync(imgFile), `Image ${imgName} must exist on disk`);
   const stats = fs.statSync(imgFile);
-  assert.ok(stats.size > 4000, `Image ${imgName} must have valid content (>4KB), size was ${stats.size} bytes`);
+  assert.ok(stats.size > 100000, `Image ${imgName} must be high resolution (>100KB), size was ${stats.size} bytes`);
 });
-console.log(`✓ All ${expectedImages.length} photography assets verified and intact\n`);
+console.log(`✓ All ${expectedImages.length} photography assets verified as high-resolution (>100KB) and intact\n`);
 
 // 6. Verify Design System & CSS Rules
 console.log('6. Auditing Stitch Design Tokens in css/styles.css...');
