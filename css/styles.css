@@ -183,7 +183,7 @@ ul {
   line-height: 1.1;
 }
 
-.brand-atelier {
+.brand-sub {
   font-size: 0.62rem;
   letter-spacing: 0.22em;
   color: var(--color-gold);
@@ -1790,7 +1790,7 @@ section {
   color: #FFF;
 }
 
-.footer-brand-atelier {
+.footer-brand-sub {
   color: var(--color-gold);
 }
 
