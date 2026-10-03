@@ -9,11 +9,11 @@ const DEFAULT_COUNTRY_CODE = '57';
 const DEFAULT_PHONE_NUMBER = '573148492143';
 
 const AVAILABLE_SERVICES = Object.freeze([
-  { id: 'bridal', name: 'Novias / Bridal Glam Luxury', priceEstimate: 'Desde $350.000 COP' },
-  { id: 'social', name: 'Maquillaje Social & Eventos', priceEstimate: 'Desde $160.000 COP' },
-  { id: 'quince', name: 'Quinceañeras & Sweet 15', priceEstimate: 'Desde $220.000 COP' },
+  { id: 'bridal', name: 'Novias / Bridal Glam Luxury', priceEstimate: 'Cotización personalizada' },
+  { id: 'social', name: 'Maquillaje Social & Eventos', priceEstimate: 'Cotización personalizada' },
+  { id: 'quince', name: 'Quinceañeras & Sweet 15', priceEstimate: 'Cotización personalizada' },
   { id: 'editorial', name: 'Editorial & Sesiones de Fotos', priceEstimate: 'Cotización personalizada' },
-  { id: 'classes', name: 'Clase VIP de Automaquillaje', priceEstimate: 'Desde $250.000 COP' }
+  { id: 'classes', name: 'Clase VIP de Automaquillaje', priceEstimate: 'Cotización personalizada' }
 ]);
 
 const AVAILABLE_PRODUCTS = Object.freeze([
