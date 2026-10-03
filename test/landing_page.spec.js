@@ -102,6 +102,11 @@ const expectedImages = [
   'portfolio-4.jpg',
   'portfolio-5.jpg',
   'portfolio-6.jpg',
+  'quince-1.jpg',
+  'quince-2.jpg',
+  'novia-1.jpg',
+  'novia-2.jpg',
+  'novia-3.jpg',
   'vane-perez-portrait.jpg',
   'vane-perez-logo.png'
 ];
