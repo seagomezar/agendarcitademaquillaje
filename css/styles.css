@@ -750,6 +750,10 @@ section {
   object-position: center 30%;
 }
 
+.service-card[data-service*="Novias"] .service-image-box img {
+  object-position: center 25%;
+}
+
 .service-card:hover .service-image-box img {
   transform: scale(1.05);
 }
