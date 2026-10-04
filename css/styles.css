@@ -755,7 +755,7 @@ section {
 }
 
 .service-card[data-service*="Social"] .service-image-box img {
-  object-position: center 25%;
+  object-position: center 22%;
 }
 
 .service-card:hover .service-image-box img {
