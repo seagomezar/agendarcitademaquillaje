@@ -146,8 +146,14 @@ const AVAILABLE_PRODUCTS = Object.freeze([
  */
 function sanitizeInputText(str) {
   if (typeof str !== 'string') return '';
-  return str
-    .replace(/<[^>]*>/g, '') // Strip HTML tags
+  let clean = str;
+  let prev;
+  do {
+    prev = clean;
+    clean = clean.replace(/<[^>]*>/g, '');
+  } while (clean !== prev);
+
+  return clean
     .replace(/[\u0000-\u001F\u007F-\u009F]/g, '') // Strip control characters
     .trim();
 }
