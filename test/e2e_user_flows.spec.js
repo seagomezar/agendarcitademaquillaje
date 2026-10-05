@@ -517,11 +517,10 @@ console.log('Flow 3: Simulating Portfolio Category Filtering Funnel...');
   const doc = env.document;
 
   const portfolioItems = doc.querySelectorAll('.portfolio-grid .portfolio-item');
-  assert.strictEqual(portfolioItems.length, 8, 'Must render exactly 8 portfolio showcase items');
+  assert.strictEqual(portfolioItems.length, 6, 'Must render exactly 6 authentic client portfolio showcase items');
 
   const noviasTab = doc.querySelector('.portfolio-tab-btn[data-filter="novias"]');
   const socialTab = doc.querySelector('.portfolio-tab-btn[data-filter="social"]');
-  const editorialTab = doc.querySelector('.portfolio-tab-btn[data-filter="editorial"]');
   const allTab = doc.querySelector('.portfolio-tab-btn[data-filter="all"]');
 
   // 3.1 Click "Novias"
@@ -540,14 +539,7 @@ console.log('Flow 3: Simulating Portfolio Category Filtering Funnel...');
     assert.strictEqual(!item.classList.contains('is-hidden'), isSocial, 'Social/quince items must be visible, others hidden');
   });
 
-  // 3.3 Click "Editorial & Moda"
-  editorialTab.click();
-  portfolioItems.forEach(item => {
-    const isEditorial = item.getAttribute('data-category') === 'editorial';
-    assert.strictEqual(!item.classList.contains('is-hidden'), isEditorial, 'Editorial items must be visible, others hidden');
-  });
-
-  // 3.4 Click "Todos los Looks"
+  // 3.3 Click "Todos los Looks"
   allTab.click();
   portfolioItems.forEach(item => {
     assert.ok(!item.classList.contains('is-hidden'), 'All portfolio items must be visible when "all" is active');
